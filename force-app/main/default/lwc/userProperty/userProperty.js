@@ -1,3 +1,7 @@
+// miscGetUserId.js
 import { LightningElement } from 'lwc';
+import Id from '@salesforce/user/Id';
 
-export default class UserProperty extends LightningElement {}
+export default class MiscGetUserId extends LightningElement {
+    userId = Id;
+}
