@@ -1,0 +1,15 @@
+<template>
+    <lightning-record-edit-form 
+        record-id={recordId}
+        object-api-name="Contact">
+            <lightning-messages></lightning-messages>
+            <lightning-input-field field-name="FirstName"></lightning-input-field>
+            <lightning-input-field field-name="LastName"></lightning-input-field>
+            <lightning-input-field field-name="Email"></lightning-input-field> 
+            <lightning-input-field field-name="Phone"></lightning-input-field> 
+            <div class="slds-align_absolute-center slds-p-around_medium">
+                <lightning-button class="slds-m-around_xx-small" label="Cancel" onclick={handleReset}></lightning-button>
+                <lightning-button class="slds-m-around_xx-small" label="Create Contact" type="submit" variant="brand" ></lightning-button>
+            </div>
+    </lightning-record-edit-form>
+</template>
