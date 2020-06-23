@@ -1,0 +1,20 @@
+<!-- opportunitiesOverAmount.html -->
+<template>
+    <!-- Display a list of opportunities -->
+    <p>List of opportunities over
+        <lightning-formatted-number value={amount} format-style="currency"></lightning-formatted-number>
+    </p>
+    <template if:true={opptiesOverAmount.data}>
+        <template for:each={opptiesOverAmount.data} for:item="oppty" for:index="idx">
+            <div key={oppty.Id} class="slds-m-bottom_medium">
+                <p>{idx}. {oppty.Name}</p>
+                <p><lightning-formatted-number value={oppty.Amount} format-style="currency"></lightning-formatted-number></p>
+                <p><lightning-formatted-date-time value={oppty.CloseDate}></lightning-formatted-date-time></p>
+                <p><lightning-badge label={oppty.StageName}></lightning-badge></p>
+            </div>
+        </template>
+        <!-- Click the button to change the opportunities. Requires the data to be refetched
+             and rerendered -->
+        <lightning-button label="Mark all as Closed Won" onclick={handleClick}></lightning-button>
+    </template>
+</template>
