@@ -1,0 +1,9 @@
+<!-- c-account-creator -->
+<template>
+    <lightning-record-form object-api-name={accountObject}
+        fields={accountFields}
+        mode="edit"
+        onsuccess={handleAccountCreated}>
+    </lightning-record-form>
+    <span class="slds-m-around_small status">{createStatus}</span>
+</template>

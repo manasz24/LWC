@@ -1,0 +1,10 @@
+<template>
+    <lightning-card title="Record Form with Record Type" icon-name="standard:account">
+        <div if:true={objectInfo.data} class="slds-m-around_medium">
+            <lightning-record-form object-api-name={objectApiName} 
+                 record-type-id={recordTypeId}
+                 fields={fields}>
+            </lightning-record-form>
+        </div>
+    </lightning-card>
+</template>
