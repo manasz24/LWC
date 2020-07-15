@@ -25,7 +25,15 @@ public with sharing class ContactController {
 
     @AuraEnabled(cacheable=true)
     public static Contact getSingleContact(){
-        return [SELECT Id, Name, Title, Phone, Email, Picture__c FROM Contact LIMIT 1];
+        return [SELECT Id, Name, Title, Phone, Email FROM Contact LIMIT 1];
+    }
+
+
+    @AuraEnabled(cacheable=true)
+    public static List<Contact> getContacts(){
+        return [Select FirstName, LastName, Email
+        From Contact
+        Limit 10];
     }
 
 }
